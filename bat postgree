@@ -1,5 +1,4 @@
-bat ppostgree
 @echo off
 set PGPASSWORD=12345
-set fecha=%date:~0,1%
-pg_dump --host localhost --port 5432 --username "postgres" --format custom --file "C:\test\respaldo_%fecha%.backup" "prueba05"
+set fileName=BackupPG4_d-%date:~0,2%-%date:~3,2%-%date:~6,4%_t-%time:~0,2%-%time:~3,2%-%time:~6,2%-%time:~9,2%
+pg_dump --host localhost --port 5432 --username "postgres" --format custom --file "C:\test\%fileName%.backup" "db_erp_estrella"
