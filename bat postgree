@@ -1,0 +1,5 @@
+bat ppostgree
+@echo off
+set PGPASSWORD=12345
+set fecha=%date:~0,1%
+pg_dump --host localhost --port 5432 --username "postgres" --format custom --file "C:\test\respaldo_%fecha%.backup" "prueba05"
